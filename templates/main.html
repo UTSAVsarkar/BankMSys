@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+      background-color: #171715;
+    }
+
+    /* Remove the jumbotron's default bottom margin */
+     .jumbotron {
+      margin-bottom: 0;
+      background-color: #f4511e;
+    }
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f4511e;
+      padding: 25px;
+    }
+
+    <!--depo-->
+    body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>XYZ BANK OF INDIA</h1>
+    <p>We believe in money</p>
+  </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Deals</a></li>
+        <li><a href="#">Stores</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href=""><span class="glyphicon glyphicon-user"></span> Logout</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Deposit Amount</div>
+        <div class="panel-body" ><img src="static/depoamo.png" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer"><a href="#depo"  onclick="document.getElementById('depo').style.display='block'" style="width:auto;"> >> </a></div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-danger">
+        <div class="panel-heading">Withdraw Amount</div>
+        <div class="panel-body"><img src="static/wta.png" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer"><a href="#with" onclick="document.getElementById('with').style.display='block'" style="width:auto;"> >> </a></div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-success">
+        <div class="panel-heading">Add Money</div>
+        <div class="panel-body"><img src="static/add.png" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer"><a href="#addmo" onclick="document.getElementById('addmo').style.display='block'" style="width:auto;"> >> </a></div>
+      </div>
+    </div>
+  </div>
+</div><br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Close Account</div>
+        <div class="panel-body"><img src="static/close.png" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer"><a onclick="myfunc()" href="/logout"> >>  </a></div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Account Details</div>
+        <div class="panel-body"><img src="static/details.png" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer"><a href="/ad"> >> </a></div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Modify Account</div>
+        <div class="panel-body"><img src="static/mod.png" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer"><a href="/mod"> >> </a></div>
+      </div>
+    </div>
+  </div>
+</div><br><br>
+
+<!--depo-->
+
+
+<div id="depo" class="modal">
+
+  <form class="modal-content animate" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('depo').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="static/depoamo.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Name of Account Holder</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="uname"><b>Account Number</b></label>
+      <input type="text" placeholder="Account Number" name="uname" required>
+
+      <label for="uname"><b>Amount</b></label>
+      <input type="text" placeholder="Amount" name="uname" required>
+
+
+      <label for="uname"><b>Phone Number</b></label>
+      <input type="text" placeholder="Phone Number" name="uname" required>
+
+      <button type="submit">Done!</button>
+    </div>
+  </form>
+</div>
+
+<!--with-->
+<div id="with" class="modal">
+
+  <form class="modal-content animate" action="/back" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('with').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="static/wta.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Pay To</b></label>
+      <input type="text" placeholder="Pay To" name="uname" required>
+
+      <label for="uname"><b>Amount</b></label>
+      <input type="text" placeholder="Amount" name="uname" required>
+
+      <label for="uname"><b>Phone Number</b></label>
+      <input type="text" placeholder="Phone Number" name="uname" required>
+
+      <button type="submit">Done!</button>
+    </div>
+  </form>
+</div>
+
+<!--addmo-->
+<div id="addmo" class="modal">
+
+  <form class="modal-content animate" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('addmo').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="static/add.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+
+      <label for="uname"><b>Account Number</b></label>
+      <input type="text" placeholder="Account Number where you want to take money" name="uname" required>
+
+      <label for="uname"><b>Amount</b></label>
+      <input type="text" placeholder="Amount" name="uname" required>
+
+      <label for="uname"><b>Phone Number</b></label>
+      <input type="text" placeholder="Phone Number" name="uname" required>
+
+      <button type="submit">Done!</button>
+    </div>
+  </form>
+</div>
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('depo');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+function myfunc(){
+  if(confirm("Are you sure you want to close your account!!!")){
+  window.location = "layout.html";
+  };
+}
+
+function func(){
+  if(confirm("Are you sure you want to logout!!!")){
+  window.location = "layout.html";
+  };
+}
+
+</script>
+
+</body>
+</html>
